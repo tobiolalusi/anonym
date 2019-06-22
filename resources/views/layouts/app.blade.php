@@ -16,14 +16,28 @@
 				<a href="{{ route('home') }}" class="font-lato font-black tracking-widest text-xl">ANONYM</a>
 			</div>
 			<div class="flex items-center text-sm">
-				<a href="{{ route('login') }}" class="block lg:inline-block {{ Request::url() === route('login') ? 'text-primary-light' : 'text-primary-shade' }} hover:text-primary-light transition-color mx-2">
-					<span class="fas fa-user text-xl sm:text-sm mt-2 ml-4"></span>
-					<span class="hidden sm:inline-block ml-1">LOGIN</span>
-				</a>
-				<a href="{{ route('register') }}" class="block sm:inline-block text-primary-shade hover:text-primary-light transition-color mx-2">
-					<span class="fas fa-user-plus text-xl sm:text-sm mt-2 ml-4"></span>
-					<span class="hidden sm:inline-block ml-1">REGISTER</span>
-				</a>
+				@guest
+					<a href="{{ route('login') }}" class="block lg:inline-block {{ Request::url() === route('login') ? 'text-primary-light' : 'text-primary-shade hover:text-primary-light transition-color mx-2' }}">
+						<span class="fas fa-sign-in-alt text-xl sm:text-sm mt-2 ml-4"></span>
+						<span class="hidden sm:inline-block ml-1">LOGIN</span>
+					</a>
+					<a href="{{ route('register') }}" class="block sm:inline-block {{ Request::url() === route('register') ? 'text-primary-light' : 'text-primary-shade hover:text-primary-light transition-color mx-2' }}">
+						<span class="fas fa-user-plus text-xl sm:text-sm mt-2 ml-4"></span>
+						<span class="hidden sm:inline-block ml-1">REGISTER</span>
+					</a>
+				@elseauth
+					<div class="lg:inline-block text-primary-light mx-2">
+						<span class="fas fa-user text-xl sm:text-sm mt-2 ml-4"></span>
+						<span class="hidden sm:inline-block ml-1 font-bold">{{ Auth::user()->username }}</span>
+					</div>
+					<form method="POST" action="{{ route('logout') }}" class="block sm:inline-block text-primary-shade hover:text-primary-light transition-color mx-2">
+						@csrf
+						<button type="submit" class="focus:outline-none">
+							<span class="fas fa-sign-out-alt text-xl sm:text-sm mt-2 ml-4"></span>
+							<span class="hidden sm:inline-block ml-1">LOGOUT</span>
+						</button>
+					</form>
+				@endguest
 			</div>
 		</div>
 	</nav>

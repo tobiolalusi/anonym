@@ -11,12 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WriteController@index')->name('home');
 
-Route::resource('/writes', 'WriteController');
+Route::resource('/writes', 'WriteController')->except('index');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
