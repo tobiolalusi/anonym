@@ -24,7 +24,6 @@
 				<div class="state p-primary-o">
 					<label class="text-primary-shade hover:text-primary">Keep me logged in</label>
 				</div>
-
 			</div>
 			<div class="flex justify-between items-center">
 				<button type="submit" class="py-3 px-5 mt-2 mb-3 bg-primary-shade hover:bg-primary text-primary-light font-bold rounded-lg focus:outline-none">
