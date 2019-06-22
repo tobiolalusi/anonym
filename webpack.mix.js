@@ -14,6 +14,9 @@ let tailwindcss = require('tailwindcss');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
+	.copy('node_modules/@fortawesome/fontawesome-free', 'public/css/font-awesome')
+	.styles('public/css/font-awesome/css/all.css', 'public/css/font-awesome/css/all.css')
 	.options({
+		processCssUrls: false,
 		postCss:[tailwindcss('./tailwind.config.js')],
 	});
