@@ -8,7 +8,7 @@
 			@csrf
 			<h1 class="font-lato font-black text-3xl text-center mb-4 tracking-wider">LOGIN</h1>
 			<div class="my-4">
-				<input type="text" name="username" autofocus onfocus="this.setSelectionRange(this.value.length, this.value.length);" autocomplete="off" class="w-full bg-transparent border-b-2 {{ $errors->has('password') ? 'border-red-700' : 'border-primary-shade' }} px-2 py-3 my-2 rounded-lg tracking-widest focus:outline-none" placeholder="Username" value="{{ old('username') }}" />
+				<input type="text" name="username" autofocus onfocus="this.setSelectionRange(this.value.length, this.value.length);" autocomplete="off" class="w-full bg-transparent border-b-2 {{ $errors->has('username') ? 'border-red-700' : 'border-primary-shade' }} px-2 py-3 my-2 rounded-lg tracking-widest focus:outline-none" placeholder="Username" value="{{ old('username') }}" />
 				@error('username')
 					<div class="text-sm text-red-700">{{ $message }}</div>
 				@enderror
