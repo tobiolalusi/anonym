@@ -26,7 +26,7 @@
 						<span class="hidden sm:inline-block ml-1">REGISTER</span>
 					</a>
 				@elseauth
-					<a href="/profile" class="lg:inline-block text-primary-light mx-2">
+					<a href="{{ route('profile') }}" class="lg:inline-block text-primary-light mx-2">
 						<span class="fas fa-user text-xl sm:text-sm mt-2 ml-4"></span>
 						<span class="hidden sm:inline-block ml-1 font-bold">{{ strtolower(Auth::user()->username) }}</span>
 					</a>

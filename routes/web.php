@@ -17,4 +17,4 @@ Auth::routes();
 
 Route::resource('/writes', 'WriteController')->only(['store', 'show', 'destroy']);
 
-Route::view('/profile', 'profile')->middleware('auth');
+Route::view('/profile', 'profile')->middleware('auth')->name('profile');
