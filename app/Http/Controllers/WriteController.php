@@ -14,7 +14,7 @@ class WriteController extends Controller
      */
     public function index()
     {
-        $writes = Write::all();
+        $writes = Write::all()->sortByDesc('updated_at');
 
         return view('writes.index', compact('writes'));
     }

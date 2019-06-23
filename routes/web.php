@@ -13,6 +13,6 @@
 
 Route::get('/', 'WriteController@index')->name('home');
 
-Route::resource('/writes', 'WriteController')->except('index');
+Route::resource('/writes', 'WriteController')->only(['index', 'store', 'show', 'destroy']);
 
 Auth::routes();
