@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Write;
+use App\Story;
 use Illuminate\Http\Request;
 
-class WriteController extends Controller
+class StoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class WriteController extends Controller
      */
     public function index()
     {
-        $writes = Write::all()->sortByDesc('updated_at');
+        $stories = Story::all()->sortByDesc('updated_at');
 
-        return view('writes.index', compact('writes'));
+        return view('stories.index', compact('stories'));
     }
 
     /**
@@ -43,10 +43,10 @@ class WriteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Write  $write
+     * @param  \App\Story  $story
      * @return \Illuminate\Http\Response
      */
-    public function show(Write $write)
+    public function show(Story $story)
     {
         //
     }
@@ -54,10 +54,10 @@ class WriteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Write  $write
+     * @param  \App\Story  $story
      * @return \Illuminate\Http\Response
      */
-    public function edit(Write $write)
+    public function edit(Story $story)
     {
         //
     }
@@ -66,10 +66,10 @@ class WriteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Write  $write
+     * @param  \App\Story  $story
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Write $write)
+    public function update(Request $request, Story $story)
     {
         //
     }
@@ -77,10 +77,10 @@ class WriteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Write  $write
+     * @param  \App\Story  $story
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Write $write)
+    public function destroy(Story $story)
     {
         //
     }

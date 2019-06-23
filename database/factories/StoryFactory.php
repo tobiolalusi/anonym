@@ -2,10 +2,10 @@
 
 /* @var $factory \Illuminate\Database\Eloquent\Factory */
 
-use App\Write;
+use App\Story;
 use Faker\Generator as Faker;
 
-$factory->define(Write::class, function (Faker $faker) {
+$factory->define(Story::class, function (Faker $faker) {
     return [
 		'title' => $faker->sentence(),
 		'content' => $faker->text(2000)

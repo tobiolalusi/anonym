@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', 'WriteController@index')->name('home');
+Route::get('/', 'StoryController@index')->name('home');
 
 Auth::routes();
 
-Route::resource('/writes', 'WriteController')->only(['store', 'show', 'destroy']);
+Route::resource('/stories', 'StoryController')->only(['store', 'show', 'destroy']);
 
 Route::view('/profile', 'profile')->middleware('auth')->name('profile');
