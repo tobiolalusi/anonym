@@ -37,7 +37,12 @@ class StoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Story::create($request->validate([
+        	'title' => ['required', 'max:255', 'string', 'min:8'],
+			'content' => ['required', 'string', 'min:32']
+		]));
+
+        return redirect(route('home'));
     }
 
     /**
