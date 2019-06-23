@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Anonym Stories')
+@section('title', env('APP_NAME').' Stories')
 
 @section('content')
 	<section class="flex flex-wrap my-2">

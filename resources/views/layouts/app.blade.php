@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<meta name="csrf-token" content="{{ csrf_token() }}" />
-	<title>@yield('title', 'Anonym')</title>
+	<title>@yield('title', env('APP_NAME'))</title>
 	<link rel="stylesheet" type="text/css" href="{{ mix('/css/app.css') }}" />
 	<link rel="stylesheet" type="text/css" href="{{ mix('/css/font-awesome/css/all.css') }}" />
 </head>
@@ -13,7 +13,7 @@
 	<nav class="bg-primary fixed w-full p-5 top-0 border-b-2 border-primary-shade">
 		<div class="container mx-auto flex items-center justify-between flex-wrap">
 			<div class="flex items-center flex-shrink-0 text-primary-light mr-6">
-				<a href="{{ route('home') }}" class="font-lato font-black tracking-widest text-xl">ANONYM</a>
+				<a href="{{ route('home') }}" class="font-lato font-black tracking-widest text-xl">{{ strtoupper(env('APP_NAME')) }}</a>
 			</div>
 			<div class="flex items-center text-sm">
 				@guest
