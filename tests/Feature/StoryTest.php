@@ -14,8 +14,8 @@ class StoryTest extends TestCase
         $this->actingAs(factory('App\User')->create());
 
 		$data = [
-			'title' => 'Story title',
-			'content' => 'Story content'
+			'title' => 'A test title long that meets the validation.',
+			'content' => 'The test story content long enough to fulfill the validation requests.'
 		];
 
         $this->post('/stories', $data);
