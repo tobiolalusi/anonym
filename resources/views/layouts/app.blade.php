@@ -26,10 +26,10 @@
 						<span class="hidden sm:inline-block ml-1">REGISTER</span>
 					</a>
 				@elseauth
-					<div class="lg:inline-block text-primary-light mx-2">
+					<a href="/profile" class="lg:inline-block text-primary-light mx-2">
 						<span class="fas fa-user text-xl sm:text-sm mt-2 ml-4"></span>
-						<span class="hidden sm:inline-block ml-1 font-bold">{{ Auth::user()->username }}</span>
-					</div>
+						<span class="hidden sm:inline-block ml-1 font-bold">{{ strtolower(Auth::user()->username) }}</span>
+					</a>
 					<form method="POST" action="{{ route('logout') }}" class="block sm:inline-block text-primary-shade hover:text-primary-light transition-color mx-2">
 						@csrf
 						<button type="submit" class="focus:outline-none">

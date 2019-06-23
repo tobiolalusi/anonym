@@ -13,6 +13,8 @@
 
 Route::get('/', 'WriteController@index')->name('home');
 
-Route::resource('/writes', 'WriteController')->only(['index', 'store', 'show', 'destroy']);
-
 Auth::routes();
+
+Route::resource('/writes', 'WriteController')->only(['store', 'show', 'destroy']);
+
+Route::view('/profile', 'profile')->middleware('auth');
