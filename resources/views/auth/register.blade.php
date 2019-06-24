@@ -3,7 +3,7 @@
 @section('title', 'Register - Anonym')
 
 @section('content')
-	<div class="w-full px-4 mt-4 text-primary-shade">
+	<div class="w-full mt-4 text-primary-shade">
 		<form method="POST" action="/register" class="max-w-sm mx-auto p-8 bg-primary-tint border-primary-shade border-t-4 border-b-4 rounded-lg shadow-lg">
 			@csrf
 			<h1 class="font-lato font-black text-3xl text-center mb-4 tracking-wider">REGISTER</h1>

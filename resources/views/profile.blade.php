@@ -3,7 +3,7 @@
 @section('title', Auth::user()->username.' - '.env('APP_NAME'))
 
 @section('content')
-	<section class="w-full px-4 mt-4 text-primary-shade">
+	<section class="my-4 text-primary-shade">
 		<form method="POST" action="{{ route('stories.store') }}" class="max-w-3xl mx-auto p-8 bg-primary-tint border-primary-shade border-t-4 border-b-4 rounded-lg shadow-lg">
 			@csrf
 			<h1 class="font-lato font-black text-3xl text-center mb-4 tracking-wider uppercase">Write story</h1>
@@ -25,5 +25,8 @@
 				</button>
 			</div>
 		</form>
+	</section>
+	<section class="my-4 mt-12">
+		<h1 class="uppercase font-lato text-primary-shade text-4xl tracking-wider font-black">Stories you follow</h1>
 	</section>
 @endsection
