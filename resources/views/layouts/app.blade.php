@@ -41,7 +41,7 @@
 			</div>
 		</div>
 	</nav>
-	<main class="container mx-auto px-2">
+	<main class="container mx-auto p-4">
 		@yield('content')
 	</main>
 </body>
