@@ -36,4 +36,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+	public function follows() {
+		return $this->hasMany(Follow::class);
+	}
+
+	public function followsThisStory($story_id) {
+		return $this->follows()->where('story_id', $story_id)->get()->first();
+	}
+
+	public function followedStories() {
+		return Story::find($this->follows->pluck('story_id'));
+	}
 }

@@ -26,7 +26,11 @@
 			</div>
 		</form>
 	</section>
-	<section class="my-4 mt-12">
-		<h1 class="uppercase font-lato text-primary-shade text-4xl tracking-wider font-black">Stories you follow</h1>
+	<section class="my-6 lg:my-8">
+		<h1 class="uppercase font-lato text-primary-shade text-4xl tracking-wider font-black">
+			Following
+		</h1>
+		<hr class="border-primary-shade border-t-2" />
+		@include('layouts.stories', ['stories' => Auth::user()->followedStories()])
 	</section>
 @endsection
