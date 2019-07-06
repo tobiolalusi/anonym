@@ -18,3 +18,5 @@ Auth::routes();
 Route::resource('/stories', 'StoryController')->only(['store', 'show', 'destroy']);
 
 Route::view('/profile', 'profile')->middleware('auth')->name('profile');
+
+Route::resource('/follow', 'FollowController')->only(['store', 'destroy']);
